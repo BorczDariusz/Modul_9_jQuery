@@ -1,0 +1,66 @@
+body {
+	margin: 0 auto;
+}
+
+ul {
+	padding: 0;
+	width: 2000px;
+}
+
+ul li {
+	list-style-type: none;
+	height: 300px;
+	width: 400px;
+	margin: 0 auto;
+	float: left;
+}
+
+img {
+	max-width: 100%;
+}
+
+#carousel {
+	margin: 0 auto;
+	width: 400px;
+	height: 300px;
+	-webkit-box-shadow: -1px 2px 99px 0px rgba(0,0,0,0.58);
+	-moz-box-shadow: -1px 2px 99px 0px rgba(0,0,0,0.58);
+	box-shadow: -1px 2px 99px 0px rgba(0,0,0,0.58);
+	overflow: scroll;
+	margin-top: 150px;
+}
+
+.buttons {
+	width: 400px;
+	position: absolute;
+	text-align: center;
+}
+
+button {
+	color: rgba(204, 204, 204, 0.5);
+	font-size: 30px;
+	border: none;
+    height: 300px;
+    width: 70px;
+    margin-top: -16px;
+    background: rgba(255,255,255, 0.2);
+    background: -moz-linear-gradient(left, rgba(255,255,255, 0.2) 0%, rgba(255,255,255,0.53) 47%, rgba(255,255,255,0) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(255,255,255,0.53)), color-stop(100%, rgba(255,255,255,0)));
+    background: -webkit-linear-gradient(left, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.53) 47%, rgba(255,255,255,0) 100%);
+    background: -o-linear-gradient(left, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.53) 47%, rgba(255,255,255,0) 100%);
+    background: -ms-linear-gradient(left, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.53) 47%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(to right, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.53) 47%, rgba(255,255,255,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
+}
+
+button:focus, input:focus{
+    outline: none;
+}
+
+#prevButton {
+	float: left;
+}
+
+#nextButton {
+	float: right;
+}

@@ -1,31 +1,38 @@
 $(function(){
     var carouselList = $("#carousel ul");
+    var intervalSet = window.setInterval(changeSlide, 5000);
+  
+    function changeSlide() {
+    	carouselList.animate({'marginLeft': -400}, 1200, moveFirstSlide);
+    }
 
-	setInterval(changeSlide, 5000);
+    function moveFirstSlide() {
+  		var firstItem = carouselList.find('li:first');
+  		var lastItem = carouselList.find('li:last');
+    	lastItem.after(firstItem);
+    	carouselList.css({marginLeft: 0});
+    }
 
-	function changeSlide() {
-		carouselList.animate({'marginLeft':-400}, 1200, moveFirstSlide());
-	}
+    function moveSlideBack() {
+    	var firstItem = carouselList.find('li:first');
+  		var lastItem = carouselList.find('li:last');
+    	firstItem.before(lastItem);
+    	carouselList.css({marginLeft: '-400px'}); 
+    }
+
+    function clearMyInterval() {
+    	window.clearInterval(intervalSet);
+    	intervalSet = window.setInterval(changeSlide, 3000); 
+    }
     
-	function moveFirstSlide() {
-		var firstItem = carouselList.find("li:first");
-		var lastItem = carouselList.find("li:last");
-		lastItem.after(firstItem);
-		carouselList.css({marginLeft:0});
-	}
+    $('#prevButton').click(function() {
+    	clearMyInterval(); 
+    	moveSlideBack();
+    	carouselList.animate({'marginLeft': 0}, 1200);
+    });
 
-	function moveSlideBack() {
-		var firstItem = carouselList.find("li:first");
-		var lastItem = carouselList.find("li:last");
-		lastItem.before(firstItem);
-		carouselList.css({marginLeft:0});
-	}
-	$('#prevButton').click(function() {
-		carouselList.animate({'marginleft':-400}, 500, moveSlideBack());
-	});
-
-	$('#nextButton').click(function() {
-		carouselList.animate({'marginLeft':-400}, 500, moveFirstSlide());
-	});
-
+    $('#nextButton').click(function() {
+    	clearMyInterval();
+    	changeSlide();
+    });
 });
